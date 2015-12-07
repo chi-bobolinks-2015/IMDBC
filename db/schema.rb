@@ -11,16 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151207204756) do
-=======
-ActiveRecord::Schema.define(version: 20151207204512) do
->>>>>>> origin/master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "movies", force: :cascade do |t|
     t.string   "title"
     t.text     "synopsis"
@@ -29,7 +24,6 @@ ActiveRecord::Schema.define(version: 20151207204512) do
     t.datetime "updated_at",   null: false
   end
 
-=======
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email",                  default: "", null: false
@@ -42,6 +36,10 @@ ActiveRecord::Schema.define(version: 20151207204512) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
@@ -49,5 +47,4 @@ ActiveRecord::Schema.define(version: 20151207204512) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
->>>>>>> origin/master
 end
