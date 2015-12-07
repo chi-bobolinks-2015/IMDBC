@@ -1,5 +1,6 @@
+<h1>IMDBC Homepage!</h1>
 <ul>
   <% @movies.each do |movie| %>
-  <li><%= link_to "#{movie_path movie.title}", movie_path %></li>
+  <li><%= link_to "#{movie.title}", movie_path(movie) %></li>
   <% end %>
 </ul>
