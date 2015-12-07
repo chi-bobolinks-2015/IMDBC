@@ -1,10 +1,15 @@
 <h1>Movie Show Page!</h1>
+<%= link_to "Edit Movie", edit_movie_path %>
+<%= link_to "Delete Movie", movie_path, method: :delete, data: {confirm: "Are you sure?"} %>
 <ul>
   <h2><%= @movie.title %></h2>
   <li><%= @movie.synopsis %></li>
   <li><%= @movie.release_date %></li>
 
-  <li><% @movie.reviews.each do |review| %></li>
-  <li><%= link_to "#{movie_review_path review.title}", movie_review_path %></li>
-  <% end %>
+  <li>Reviews: <% @movie.reviews.each do |review| %></li>
+  <ul>
+    <li><%= link_to "#{review.title}", movie_review_path(@movie, review) %></li>
+    <li><%= review.content.truncate(75, separator: '. ') %></li>
+  </ul>
+    <% end %>
 </ul>
