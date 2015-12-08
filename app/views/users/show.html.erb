@@ -10,3 +10,24 @@
     <% end %>
   <% end %>
 <% end %>
+
+<h3>Reviews</h3>
+<ul>
+<% @reviews.each do |review| %>
+  <li><%= review.content.truncate(325, separator: ' ') %></li>
+  <li><%= link_to "#{review.movie.title}",  movie_review_path("#{review.movie.id}", review)  %></li>
+<% end%>
+</ul>
+
+<h3>Comments</h3>
+<ul>
+<% @comments.each do |comment| %>
+  <li>
+  <%= comment.content %>
+  <%= link_to "#{comment.review.movie.title}", movie_path("#{comment.review.movie.id}")  %>
+  </li>
+<% end%>
+</ul>
+
+
+
