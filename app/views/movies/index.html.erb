@@ -4,6 +4,6 @@
 <h4>CLICK on a movie title to read reviews:</h4>
 <ul>
   <% @movies.each do |movie| %>
-  <li><%= link_to "#{movie.title}", movie_path(movie) %></li>
+  <li><%= link_to "#{movie.title}", movie_path(movie) %> <span id="release_date"><%= movie.release_date %></span></li>
   <% end %>
 </ul>

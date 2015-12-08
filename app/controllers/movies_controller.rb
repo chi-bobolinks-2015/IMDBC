@@ -4,9 +4,9 @@ class MoviesController < ApplicationController
 
   def index
     if params[:search]
-      @movies = Movie.search(params[:search])
+      @movies = Movie.search(params[:search]).order(release_date: :desc)
     else
-      @movies = Movie.all
+      @movies = Movie.order(release_date: :desc)
     end
   end
 

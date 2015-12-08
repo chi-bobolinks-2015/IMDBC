@@ -3,7 +3,7 @@ has_many :reviews
 has_many :reviewers, through: :reviews, source: :user
 
   def self.search(query)
-    where("title like ?", "%#{query}%")
+    where("lower(title) like ?", "%#{query.downcase}%")
   end
 
   def critic_reviews
