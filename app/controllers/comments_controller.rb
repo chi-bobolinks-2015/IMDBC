@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    p params
     @review = Review.find(params[:review_id])
     @movie = Movie.find(params[:movie_id])
     @comment = @review.comments.new(comment_params)
@@ -17,6 +16,14 @@ class CommentsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @review = Review.find(params[:review_id])
+    @movie = Movie.find(params[:movie_id])
+    @comment.destroy
+    redirect_to movie_review_path(@movie, @review)
   end
 
   private
