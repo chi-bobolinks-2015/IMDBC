@@ -1,4 +1,13 @@
-One user
+<h1><%= @user.username %></h1>
+
+<% if current_user == @user %>
+  <p>Welcome <%= @user.username %>! Do you want to update your profile?</p>
+  <% if current_user %>
+      <%= link_to "edit profile", edit_user_registration_path %>
+  <% end %>
+<% end %>
+
+
 
 <%= link_to 'back', users_path%>
 
