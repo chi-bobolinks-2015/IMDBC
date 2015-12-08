@@ -20,40 +20,39 @@ users = 25.times.map do
 end
 
 movies = [ {:title => "In the Heart of the Sea",
-                :synopsis => "Based on the 1820 event, a whaling ship is preyed upon by a sperm whale, stranding its crew at sea for 90 days, thousands of miles from home.",
-                :release_date => DateTime.new(2015, 12, 11)},
+                :synopsis => "Based on the 1820 event, a whaling ship is preyed upon by a sperm whale, stranding its crew at sea for 90 days, thousands of miles from home.", :release_date => DateTime.new(2015, 12, 11)},
 
             {:title => "Legend",
                 :synopsis => "The film tells the story of the identical twin gangsters Reggie and Ronnie Kray, two of the most notorious criminals in British history, and their organised crime empire in the East End of London during the 1960s.",
-                :release_date => DateTime.new(2015, 11, 20)},
+                :release_date => DateTime.new(2015, 11, 20), :trailer_url => "https://www.youtube.com/embed/yI3v6KfR9Mw"},
 
             {:title => "The Big Short",
                 :synopsis => "Four outsiders in the world of high-finance who predicted the credit and housing bubble collapse of the mid-2000s decide to take on the big banks for their lack of foresight and greed.",
-                :release_date => DateTime.new(2015, 12, 23)},
+                :release_date => DateTime.new(2015, 12, 23), :trailer_url => "https://www.youtube.com/embed/vgqG3ITMv1Q"},
 
            {:title => "The Lady in the Van",
                 :synopsis => "A man forms an unexpected bond with a transient woman living in her car that's parked in his driveway.",
-                :release_date => DateTime.new(2016, 01, 16)},
+                :release_date => DateTime.new(2016, 01, 16), :trailer_url => "https://www.youtube.com/embed/47T0HORY9gs"},
 
             {:title => "Don Verdean",
                 :synopsis => "A self-professed biblical archaeologist who has fallen on hard times starts to bend the truth in order to continue inspiring the faithful. ",
-                :release_date => DateTime.new(2015, 12, 11)},
+                :release_date => DateTime.new(2015, 12, 11), :trailer_url => "https://www.youtube.com/embed/0a29hOLd1gA"},
 
             {:title => "The Boy and the World",
                 :synopsis => "A little boy goes on an adventurous quest in search of his father.",
-                :release_date => DateTime.new(2015, 12, 11)},
+                :release_date => DateTime.new(2015, 12, 11), :trailer_url => "https://www.youtube.com/embed/eqdrwu0NvY8"},
 
             {:title => "The Hunger Games: Mockingjay - Part 2",
                 :synopsis => "As the war of Panem escalates to the destruction of other districts by the Capitol, Katniss Everdeen, the reluctant leader of the rebellion, must bring together an army against President Snow, while all she holds dear hangs in the balance.",
-                :release_date => DateTime.new(2015, 11, 20)},
+                :release_date => DateTime.new(2015, 11, 20), :trailer_url => "https://www.youtube.com/embed/n-7K_OjsDCQ"},
 
             {:title => "Krampus",
                 :synopsis => "A boy who has a bad Christmas ends up accidentally summoning a Christmas demon to his family home.",
-                :release_date => DateTime.new(2015, 12, 05)},
+                :release_date => DateTime.new(2015, 12, 05), :trailer_url => "https://www.youtube.com/embed/BqiRZGyU718"},
 
            {:title => "Creed",
                 :synopsis => "The former World Heavyweight Champion Rocky Balboa serves as a trainer and mentor to Adonis Johnson, the son of his late friend and former rival Apollo Creed.",
-                :release_date => DateTime.new(2015, 11, 25)},
+                :release_date => DateTime.new(2015, 11, 25), :trailer_url => "https://www.youtube.com/embed/KwwLxNfBFmc"},
 
            {:title => "The Good Dinosaur",
                 :synopsis => "An epic journey into the world of dinosaurs where an Apatosaurus named Arlo makes an unlikely human friend.",
@@ -68,8 +67,7 @@ movies = [ {:title => "In the Heart of the Sea",
                 :release_date => DateTime.new(2015, 11, 20)},
 
            {:title => "The Peanuts Movie",
-                :synopsis => "Snoopy embarks upon his greatest mission as he and his team take to the skies to pursue their arch-nemesis, while his best pal Charlie Brown begins his own epic quest back home.",
-                :release_date => DateTime.new(2015, 11, 06)},
+                :synopsis => "Snoopy embarks upon his greatest mission as he and his team take to the skies to pursue their arch-nemesis, while his best pal Charlie Brown begins his own epic quest back home.", :release_date => DateTime.new(2015, 11, 06)},
 
            {:title => "Spotlight",
                 :synopsis => "The true story of how the Boston Globe uncovered the massive scandal of child molestation and cover-up within the local Catholic Archdiocese, shaking the entire Catholic Church to its core.",
