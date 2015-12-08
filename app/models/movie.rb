@@ -14,14 +14,16 @@ has_many :reviewers, through: :reviews, source: :user
     self.reviews.where(movie_id: self.id, :user_id => User.all.where(critic: false))
   end
 
-  def average_critic_rating
-    x = critic_reviews.reduce(0){|sum, review| sum += review.movie_rating.to_f}
-    x / critic_reviews.length
-  end
+  def average_rating(array)
+    if array.length == 0
+      return nil
+    else
+    x = array
+      .map(&:movie_rating)
+      .map(&:to_f)
+      .reduce(:+)
 
-  def average_user_rating
-    x = user_reviews.reduce(0){|sum, review| sum += review.movie_rating.to_f}
-    x / user_reviews.length
+    x / array.length
+    end
   end
-
 end
