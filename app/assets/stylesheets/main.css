@@ -18,7 +18,7 @@ li {
 
 .nav li {
   float: left;
-  padding: 2em;
+  padding: 1.8em;
 }
 
 .nav a {
@@ -34,14 +34,14 @@ li {
 .search {
   display: inline;
   float: right;
-  padding: 2em;
+  padding: 1.8em;
 }
 
 .container {
   clear: both;
   font-size: 1.2em;
   background-color: #F6F6F6;
-  padding: 2em 16em 2em 16em;
+  padding: 1em 4em 1em 4em;
 }
 
 #release_date {
