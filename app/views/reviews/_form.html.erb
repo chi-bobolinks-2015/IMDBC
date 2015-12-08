@@ -1,9 +1,10 @@
 <%= form_for [@movie, @review] do |f| %>
-  <!-- if user is a critic the title fields show  -->
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, autofocus: true %>
-  </div>
+  <% if current_user.critic == true %>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, autofocus: true %>
+    </div>
+  <% end %>
   <!-- else the rest shows for everyone -->
   <div class="field">
     <%= f.label :content %><br />

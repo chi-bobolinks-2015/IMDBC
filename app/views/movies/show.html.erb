@@ -28,3 +28,9 @@
   <% end %>
 </ul>
 
+<p></p>
+<% if user_signed_in? %>
+  <%= button_to "Write a Review", new_movie_review_path(movie_id: @movie.id), :method => "get" %>
+<% end %>
+
+
