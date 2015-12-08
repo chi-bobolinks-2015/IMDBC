@@ -3,12 +3,12 @@
 <%= link_to "Delete Movie", movie_path, method: :delete, data: {confirm: "Are you sure?"} %>
 <ul>
   <h2><%= @movie.title %></h2>
-  <li><%= @movie.synopsis.truncate(100, separator: ' ') %></li>
-  <li><%= @movie.release_date %></li>
+  <li><h3>synopsis: </h3><%= @movie.synopsis.truncate(100, separator: ' ') %></li>
+  <li><h3>release date: </h3><%= @movie.release_date %></li>
 
-  <li>Reviews: <% @movie.reviews.each do |review| %></li>
+  <li><h3>Reviews: </h3><% @movie.reviews.each do |review| %></li>
   <ul>
-    <li><%= link_to "#{review.title}", movie_review_path(@movie, review) %></li>
+    <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
     <li><%= review.content.truncate(75, separator: ' ') %></li>
   </ul>
     <% end %>
