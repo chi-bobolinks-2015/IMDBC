@@ -5,10 +5,16 @@
   <li><h3>synopsis: </h3><%= @movie.synopsis.truncate(100, separator: ' ') %></li>
   <li><h3>release date: </h3><%= @movie.release_date %></li>
 
-  <li><h3>Reviews: </h3><% @movie.reviews.each do |review| %></li>
+  <li><h3>Critic Reviews: </h3><% critic_reviews(@movie).each do |review| %></li>
   <ul>
     <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
     <li><%= review.content.truncate(75, separator: ' ') %></li>
   </ul>
     <% end %>
+  <li><h3>User Reviews: </h3><% user_reviews(@movie).each do |review| %></li>
+  <ul>
+    <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
+    <li><%= review.content.truncate(75, separator: ' ') %></li>
+  </ul>
+<% end %>
 </ul>
