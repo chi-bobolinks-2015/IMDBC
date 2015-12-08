@@ -26,21 +26,21 @@ movies = 50.times.map do
 
 end
 
-# critic_reviews = 100.times.map do
-#   Review.create!( :title => Faker::Lorem.sentence,
-#                   :content => Faker::Lorem.paragraph(2, true),
-#                   movie: movies.sample,
-#                   user: critics.sample,
-#                   :movie_rating => { rand(1..5) })
-# end
+critic_reviews = 100.times.map do
+  Review.create!( :title => Faker::Lorem.sentence,
+                  :content => Faker::Lorem.paragraph(2, true),
+                  movie: movies.sample,
+                  user: critics.sample,
+                  :movie_rating => rand(1..5) )
+end
 
-# user_reviews = 100.times.map do
-#   Review.create!( :title => Faker::Lorem.sentence,
-#                   :content => Faker::Lorem.paragraph(2, true),
-#                   movie: movies.sample,
-#                   user: users.sample,
-#                   :movie_rating => { rand(1..5) })
-# end
+user_reviews = 100.times.map do
+  Review.create!( :title => Faker::Lorem.sentence,
+                  :content => Faker::Lorem.paragraph(2, true),
+                  movie: movies.sample,
+                  user: users.sample,
+                  :movie_rating => rand(1..5) )
+end
 
 # comments_on_critic_reviews = 200.times.map do
 #   Comment.create!(:content => Faker::Lorem.sentence,
