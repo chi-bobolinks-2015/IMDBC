@@ -41,7 +41,13 @@ li {
   clear: both;
   font-size: 1.2em;
   background-color: #F6F6F6;
-  padding: 1em;
+  padding: 2em 16em 2em 16em;
+}
+
+#release_date {
+  font-size: .8em;
+  font-weight: bolder;
+  float: right;
 }
 
 ul {
