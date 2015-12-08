@@ -20,7 +20,7 @@ users = 25.times.map do
 end
 
 movies = [ {:title => "In the Heart of the Sea",
-                :synopsis => "Based on the 1820 event, a whaling ship is preyed upon by a sperm whale, stranding its crew at sea for 90 days, thousands of miles from home.", :release_date => DateTime.new(2015, 12, 11), trailer_url => "https://www.youtube.com/embed/K-H35Mpj4uk"},
+                :synopsis => "Based on the 1820 event, a whaling ship is preyed upon by a sperm whale, stranding its crew at sea for 90 days, thousands of miles from home.", :release_date => DateTime.new(2015, 12, 11), :trailer_url => "https://www.youtube.com/embed/K-H35Mpj4uk"},
 
             {:title => "Legend",
                 :synopsis => "The film tells the story of the identical twin gangsters Reggie and Ronnie Kray, two of the most notorious criminals in British history, and their organised crime empire in the East End of London during the 1960s.",
