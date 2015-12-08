@@ -15,12 +15,12 @@ has_many :reviewers, through: :reviews, source: :user
   end
 
   def average_critic_rating
-    x = critic_reviews.reduce(0){|sum, review| sum += review.movie_rating}
+    x = critic_reviews.reduce(0){|sum, review| sum += review.movie_rating.to_f}
     x / critic_reviews.length
   end
 
   def average_user_rating
-    x = user_reviews.reduce(0){|sum, review| sum += review.movie_rating}
+    x = user_reviews.reduce(0){|sum, review| sum += review.movie_rating.to_f}
     x / user_reviews.length
   end
 
