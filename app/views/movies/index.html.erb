@@ -1,4 +1,7 @@
-<h1>IMDBC Homepage!</h1>
+<h1>IMDbc</h1>
+<h2>A Conversation about film. A celebration of the critic.</h2>
+<h4>Learn about our trusted critics and network of users <%= link_to 'HERE', users_path %>.</h4>
+<h4>CLICK on a movie title to read reviews:</h4>
 <ul>
   <% @movies.each do |movie| %>
   <li><%= link_to "#{movie.title}", movie_path(movie) %></li>
