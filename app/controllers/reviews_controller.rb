@@ -7,18 +7,25 @@ class ReviewsController < ApplicationController
   #   @reviews = Review.all
   # end
 
-  # def show
-  # end
+  def show
+  end
 
   def new
-    @review = Review.new
+    @movie = Movie.find(params[:movie_id])
+    @review = @movie.reviews.build
+
   end
 
   def create
-    @review = Review.create(review_params)
-
+    @movie = Movie.find(params[:movie_id])
+    @review = @movie.reviews.create(review_params)
+    # @review.movie_id
+    # p "****************************"
+    # p review_params
+    # # p params
+    # @movie = Movie.find(@review.movie_id)
     if @review.valid?
-      redirect_to review_path(@review)
+      redirect_to movie_path(@movie)
     else
       render 'new'
     end
@@ -39,17 +46,17 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    redirect_to reviews_path
+    redirect_to movie_reviews_path
   end
 
 
   private
 
   def set_review
-    @review = review.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def review_params
-    params.require(:review).permit(:title, :synopsis, :release_date)
+    params.require(:review).permit(:title, :content, :movie_rating)
   end
 end

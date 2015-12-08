@@ -1,4 +1,4 @@
-<%= form_for @review do |f| %>
+<%= form_for [@movie, @review] do |f| %>
   <!-- if user is a critic the title fields show  -->
   <div class="field">
     <%= f.label :title %><br />
@@ -12,7 +12,7 @@
 
   <div class="field">
     <%= f.label :movie_rating %><br />
-    <%= f.integer :movie_rating, autofocus: true %>
+    <%= f.number_field :movie_rating, autofocus: true %>
   </div>
 
   <div class="actions">
