@@ -1,16 +1,27 @@
 class Movie < ActiveRecord::Base
 has_many :reviews
-has_many :users, through: :reviews
-
-  # def users_average_rating(array)
-  #   array.average()
-  # end
-  #
-  # def critics_average_rating(array)
-  #   array.average
-  # end
+has_many :reviewers, through: :reviews, source: :user
 
   def self.search(query)
     where("title like ?", "%#{query}%")
   end
+
+  def critic_reviews
+    self.reviews.where(movie_id: self.id, :user_id => User.all.where(critic: true))
+  end
+
+  def user_reviews
+    self.reviews.where(movie_id: self.id, :user_id => User.all.where(critic: false))
+  end
+
+  def average_critic_rating
+    x = critic_reviews.reduce(0){|sum, review| sum += review.movie_rating}
+    x / critic_reviews.length
+  end
+
+  def average_user_rating
+    x = user_reviews.reduce(0){|sum, review| sum += review.movie_rating}
+    x / user_reviews.length
+  end
+
 end

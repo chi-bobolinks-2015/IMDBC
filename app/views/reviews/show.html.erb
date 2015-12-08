@@ -1,10 +1,15 @@
 <h1>Review Show Page!</h1>
 
-<p>Comments</p>
+<ul>
+  <h2><%= @review.title %> <%= @review.movie_rating %> Stars</h2>
+  <li><p><%= @review.content %></p></li>
+</ul>
 
-<div>
-<% @comments.each do |comment| %>
-  <%= comment.content %>
-  <%= comment.user.username %>
-<% end %>
-</div>
+<h4>Comments</h4>
+
+<ul>
+  <% @comments.each do |comment| %>
+      <li><%= comment.content %></li>
+      <li><%= link_to "#{comment.user.username}", user_path(comment.user) %></li>
+  <% end %>
+</ul>
