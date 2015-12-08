@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
 
   # def edit
   # end
-  #
+
   def update
     if @movie.update(movie_params)
       redirect_to @movie, notice: "Movie updated!"
