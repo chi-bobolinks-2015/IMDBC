@@ -2,6 +2,8 @@ class Movie < ActiveRecord::Base
 has_many :reviews
 has_many :reviewers, through: :reviews, source: :user
 
+ratyrate_rateable "overall"
+
   def self.search(query)
     where("title like ?", "%#{query}%")
   end
@@ -23,7 +25,8 @@ has_many :reviewers, through: :reviews, source: :user
       .map(&:to_f)
       .reduce(:+)
 
-    x / array.length
+    average = x / array.length
+    average.round(2)
     end
   end
 end

@@ -8,6 +8,7 @@
   <% if @movie.reviews.length == 0 %>
     <p>No reviews yet</p>
   <% else %>
+    Rateable Rating : <%= rating_for @movie, "overall", :half_show => true%>
     <% if @movie.critic_reviews.length > 0 %>
     <li><h3>Average Rating: <%=@movie.average_rating(@movie.critic_reviews) %></h3></li>
     <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
