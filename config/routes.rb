@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users, :controllers => { registrations: 'registrations' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,4 +9,6 @@ Rails.application.routes.draw do
     resources :movies do
       resources :reviews
     end
+    get 'users' => 'users#index', as: 'users'
+    get 'users/:id' => 'users#show', as: 'user'
 end
