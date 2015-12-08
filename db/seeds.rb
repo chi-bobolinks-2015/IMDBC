@@ -26,6 +26,8 @@ movies = 50.times.map do
 
 end
 
+rates = 50.times.map do
+  Rate.create!(rater_id: User.all.sample.id, rateable_id: Movie.all.sample., rateable_type: "Movie", dimension: "overall", stars: 4)
 critic_reviews = 100.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
                   :content => Faker::Lorem.paragraph(2, true),

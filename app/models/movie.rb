@@ -9,6 +9,7 @@ ratyrate_rateable "overall"
   end
 
   def critic_reviews
+    # Rate.all.where(rateable_id: self.id, :rater_id => User.all.where(critic: true))
     self.reviews.where(movie_id: self.id, :user_id => User.all.where(critic: true))
   end
 

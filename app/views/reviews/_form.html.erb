@@ -11,6 +11,7 @@
   </div>
 
   <div class="field">
+    Rate The Movie: <%= rating_for @movie, "overall", :enable_half => true %>
     <%= f.label :movie_rating %><br />
     <%= f.number_field :movie_rating, autofocus: true %>
   </div>
