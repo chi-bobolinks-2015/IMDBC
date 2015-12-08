@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @critics = User.where(critic: true)
+    @users = User.where(critic: false)
   end
 
   def show

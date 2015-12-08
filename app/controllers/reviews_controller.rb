@@ -8,13 +8,13 @@ class ReviewsController < ApplicationController
   # end
 
   def show
+    @movie = Movie.find(params[:movie_id])
     @comments = Comment.where(review_id: params[:id])
   end
 
   def new
     @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.build
-
   end
 
   def create

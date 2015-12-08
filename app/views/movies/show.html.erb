@@ -1,16 +1,14 @@
-<h1>Movie Show Page!</h1>
-
 <ul>
-  <h2><%= @movie.title %></h2>
-  <li><h3>synopsis: </h3><%= @movie.synopsis.truncate(100, separator: ' ') %></li>
-  <li><h3>release date: </h3><%= @movie.release_date %></li>
+  <h1><%= @movie.title %></h1>
+  <li><h3>Synopsis: </h3><%= @movie.synopsis %></li>
+  <li><h3>Release date: </h3><%= @movie.release_date.strftime("%d %b. %Y") %></li>
 
   <% if @movie.reviews.length == 0 %>
     <p>No reviews yet</p>
   <% else %>
     Rateable Rating : <%= rating_for @movie, "overall", :half_show => true, imdb_avg: true %>
     <% if @movie.critic_reviews.length > 0 %>
-    <li><h3>Average Rating: <%=@movie.average_rating(@movie.critic_reviews) %></h3></li>
+    <li><h3>Average Critic Rating: <%=@movie.average_rating(@movie.critic_reviews) %></h3></li>
     <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
       <ul>
         <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>

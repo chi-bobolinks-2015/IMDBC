@@ -1,7 +1,8 @@
-<h1>Review Show Page!</h1>
+<h1><%= @movie.title %></h1>
 
 <ul>
   <h2><%= @review.title %> <%= @review.movie_rating %> Stars</h2>
+  <li><p>Review by: <%= link_to "#{@review.user.username}", user_path("#{@review.user.id}") %></p></li>
   <li><p><%= @review.content %></p></li>
 </ul>
 
@@ -13,3 +14,6 @@
       <li><%= link_to "#{comment.user.username}", user_path(comment.user) %></li>
   <% end %>
 </ul>
+<% if user_signed_in? %>
+  <%= link_to "Add Comment", new_movie_review_comment_path(review_id: @review.id) %>
+<% end %>

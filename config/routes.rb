@@ -8,9 +8,14 @@ Rails.application.routes.draw do
 
   root 'movies#index'
 
-    resources :movies do
-      resources :reviews
+  resources :movies do
+    resources :reviews do
+      resources :comments, only: [:new, :create]
     end
-    get 'users' => 'users#index', as: 'users'
-    get 'users/:id' => 'users#show', as: 'user'
+  end
+  get 'users' => 'users#index',
+      as: 'users'
+  get 'users/:id' => 'users#show',
+      as: 'user'
+
 end
