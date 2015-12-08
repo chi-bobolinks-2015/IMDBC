@@ -11,6 +11,7 @@
 
 
     <% if @movie.critic_reviews.length > 0 %>
+
   <li><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
 
     <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
