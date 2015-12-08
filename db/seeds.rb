@@ -1,7 +1,7 @@
 User.delete_all
 Movie.delete_all
 Review.delete_all
-# Comment.delete_all
+Comment.delete_all
 
 critics = 25.times.map do
   User.create!( :username => Faker::Internet.user_name,
@@ -42,13 +42,13 @@ user_reviews = 100.times.map do
                   :movie_rating => rand(1..5) )
 end
 
-comments_on_critic_reviews = 200.times.map do
+comments_on_critic_reviews = 400.times.map do
   Comment.create!(:content => Faker::Lorem.sentence,
                   user: users.sample,
                   review: critic_reviews.sample)
 end
 
-comments_on_user_reviews = 200.times.map do
+comments_on_user_reviews = 400.times.map do
   Comment.create!(:content => Faker::Lorem.sentence,
                   user: users.sample,
                   review: user_reviews.sample)

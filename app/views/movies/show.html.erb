@@ -4,22 +4,23 @@
   <h2><%= @movie.title %></h2>
   <li><h3>synopsis: </h3><%= @movie.synopsis.truncate(100, separator: ' ') %></li>
   <li><h3>release date: </h3><%= @movie.release_date %></li>
+
   <% if @movie.reviews.length >=1 %>
-  <li><h3>Average Rating: <%=@movie.average_critic_rating %></h3></li>
-  <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
-  <ul>
-    <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
-    <li><%= review.content.truncate(75, separator: ' ') %></li>
-    <li><%= link_to "#{review.user.username}", user_path(review.user) %></li>
-  </ul>
+    <li><h3>Average Rating: <%=@movie.average_critic_rating %></h3></li>
+    <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
+      <ul>
+        <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
+        <li><%= review.content.truncate(75, separator: ' ') %></li>
+        <li><%= link_to "#{review.user.username}", user_path(review.user) %></li>
+      </ul>
     <% end %>
-  <li><h3>Average User Rating: <%= @movie.average_user_rating %></h3></li>
-  <li><h3>User Reviews: </h3><% @movie.user_reviews.each do |review| %></li>
-  <ul>
-    <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
-    <li><%= review.content.truncate(75, separator: ' ') %></li>
-  </ul>
-  <% end %>
+    <li><h3>Average User Rating: <%= @movie.average_user_rating %></h3></li>
+    <li><h3>User Reviews: </h3><% @movie.user_reviews.each do |review| %></li>
+      <ul>
+        <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
+        <li><%= review.content.truncate(75, separator: ' ') %></li>
+      </ul>
+    <% end %>
   <% else %>
    <p>No reviews yet</p>
   <% end %>
