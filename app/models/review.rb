@@ -4,9 +4,12 @@ class Review < ActiveRecord::Base
   # has_many :comments
 
   # def self.critic_ratings(movie)
+  # Review.all.where(movie_id: movie.id)
+  #  (get all non critic/admin users)
   # end
   #
   # def self.user_ratings(movie)
+  #  (get all critics)
   # end
   #
   # def self.critic_reviews(movie)
