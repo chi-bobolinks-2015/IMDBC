@@ -1,0 +1,38 @@
+li {
+  list-style: none;
+}
+
+.nav {
+  background-color: #93b1c6;
+  height: 6em;
+}
+
+.nav ul {
+  float: left;
+  margin: 0;
+}
+
+.nav li {
+  float: left;
+  padding: 2em;
+}
+
+.nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav a:hover {
+  color: #c7d0d5;
+}
+
+.search {
+  display: inline;
+  float: right;
+  padding: 2em;
+}
+
+.container {
+  clear: both;
+}
