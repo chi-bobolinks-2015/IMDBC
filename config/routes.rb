@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :movies do
       resources :reviews
     end
-    get 'users' => 'users#index'
-    get 'users/:id' => 'users#show'
+    get 'users' => 'users#index', as: 'users'
+    get 'users/:id' => 'users#show', as: 'user'
 end
