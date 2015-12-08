@@ -10,6 +10,7 @@
   <ul>
     <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
     <li><%= review.content.truncate(75, separator: ' ') %></li>
+    <li><%= link_to "#{review.user.username}", user_path(review.user) %></li>
   </ul>
     <% end %>
   <li><h3>Average User Rating: <%= @movie.average_user_rating %></h3></li>
