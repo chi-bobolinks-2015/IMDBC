@@ -6,9 +6,14 @@
   <% if @movie.reviews.length == 0 %>
     <p>No reviews yet</p>
   <% else %>
+
+  <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div>
+
+
     <% if @movie.critic_reviews.length > 0 %>
-    <li><h3>Average Critic Rating: <%= @movie.average_rating(@movie.critic_reviews) %></h3></li>
+
   <li><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
+
     <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
       <ul>
         <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
@@ -18,7 +23,7 @@
       <% end %>
     <% end %>
     <% if @movie.user_reviews.length > 0 %>
-      <li><h3>Average User Rating: <%= @movie.average_rating(@movie.user_reviews)  %></h3></li>
+       <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(false) %></p></div>
       <li><h3>User Reviews: </h3><% @movie.user_reviews.each do |review| %></li>
         <ul>
           <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
