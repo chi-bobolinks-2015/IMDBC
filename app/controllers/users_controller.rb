@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    if user_signed_in?
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    if @user.critic ||  user_signed_in?
+      @user
     else
       @error = "You must be logged in to view a users profile"
     end
