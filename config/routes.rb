@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :movies do
     resources :reviews do
-      resources :comments, only: [:new, :create]
+      resources :comments, only: [:new, :create, :destroy]
     end
   end
   get 'users' => 'users#index',

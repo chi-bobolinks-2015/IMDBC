@@ -4,6 +4,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string :title
       t.text :synopsis
       t.date :release_date
+      t.string :trailer_url
 
       t.timestamps null: false
     end

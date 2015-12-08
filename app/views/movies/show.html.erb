@@ -11,6 +11,8 @@
 
 
     <% if @movie.critic_reviews.length > 0 %>
+  <li><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
+
     <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
       <ul>
         <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
@@ -29,6 +31,11 @@
       <% end %>
     <% end %>
   <% end %>
-
 </ul>
+
+<p></p>
+<% if user_signed_in? %>
+  <%= button_to "Write a Review", new_movie_review_path(movie_id: @movie.id), :method => "get" %>
+<% end %>
+
 

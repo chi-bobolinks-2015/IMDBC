@@ -6,11 +6,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(user_id: params[:id])
+    @reviews = Review.where(user_id: params[:id])
     @user = User.find(params[:id])
     if @user.critic ||  user_signed_in?
       @user
     else
-      @error = "You must be logged in to view a users profile"
+      @error = "You must be logged in to view a user profile"
     end
   end
 
