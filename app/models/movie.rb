@@ -10,4 +10,8 @@ has_many :movie_ratings, through: :reviews
   # def critics_average_rating
   #   self.class.average(:movie_ratings).where(:user_id in (get all critics)
   # end
+
+  def self.search(query)
+    where("title like ?", "%#{query}%")
+  end
 end
