@@ -1,0 +1,22 @@
+<%= form_for @review do |f| %>
+  <!-- if user is a critic the title fields show  -->
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+  <!-- else the rest shows for everyone -->
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :movie_rating %><br />
+    <%= f.integer :movie_rating, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>

@@ -3,7 +3,11 @@ class MoviesController < ApplicationController
   # before_action :check_admin, except: [:index, :show]
 
   def index
-    @movies = Movie.all
+    if params[:search]
+      @movies = Movie.search(params[:search])
+    else
+      @movies = Movie.all
+    end
   end
 
   # def show
@@ -25,7 +29,7 @@ class MoviesController < ApplicationController
 
   # def edit
   # end
-  #
+
   def update
     if @movie.update(movie_params)
       redirect_to @movie, notice: "Movie updated!"
