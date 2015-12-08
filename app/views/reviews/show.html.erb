@@ -1,1 +1,10 @@
 <h1>Review Show Page!</h1>
+
+<p>Comments</p>
+
+<div>
+<% @comments.each do |comment| %>
+  <%= comment.content %>
+  <%= comment.user.username %>
+<% end %>
+</div>
