@@ -95,7 +95,7 @@ Movie.create!(movies)
 
 critic_reviews = 100.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
-                  :content => Faker::Lorem.paragraph(2, true),
+                  :content => Faker::Lorem.paragraph(word_count=225, true),
                   movie: Movie.all.sample,
                   user: critics.sample,
                   :movie_rating => rand(1..5) )
@@ -103,7 +103,7 @@ end
 
 user_reviews = 100.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
-                  :content => Faker::Lorem.paragraph(2, true),
+                  :content => Faker::Lorem.paragraph(word_count=100, true),
                   movie: Movie.all.sample,
                   user: users.sample,
                   :movie_rating => rand(1..5) )
