@@ -1,5 +1,11 @@
-<h1>User Profiles</h1>
+<h1>Profiles</h1>
+<h3>Our Trusted Critics</h3>
+<% @critics.each do |critic| %>
+  <p><%= link_to "#{critic.username}", user_path(critic) %></p>
+<% end %>
+
+
+<h3>Our Movie Fans</h3>
 <% @users.each do |user| %>
   <p><%= link_to "#{user.username}", user_path(user) %></p>
 <% end %>
-
