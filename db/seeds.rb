@@ -1,6 +1,6 @@
 User.delete_all
 Movie.delete_all
-# Review.delete_all
+Review.delete_all
 # Comment.delete_all
 
 critics = 25.times.map do
