@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151208152900) do
     t.string   "title"
     t.text     "synopsis"
     t.date     "release_date"
+    t.string   "trailer_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

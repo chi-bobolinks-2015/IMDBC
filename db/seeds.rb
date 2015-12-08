@@ -21,67 +21,67 @@ end
 
 movies = [ {:title => "In the Heart of the Sea",
                 :synopsis => "Based on the 1820 event, a whaling ship is preyed upon by a sperm whale, stranding its crew at sea for 90 days, thousands of miles from home.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/K-H35Mpj4uk"},
 
             {:title => "Legend",
                 :synopsis => "The film tells the story of the identical twin gangsters Reggie and Ronnie Kray, two of the most notorious criminals in British history, and their organised crime empire in the East End of London during the 1960s.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/yI3v6KfR9Mw"},
 
             {:title => "The Big Short",
                 :synopsis => "Four outsiders in the world of high-finance who predicted the credit and housing bubble collapse of the mid-2000s decide to take on the big banks for their lack of foresight and greed.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/vgqG3ITMv1Q"},
 
            {:title => "The Lady in the Van",
                 :synopsis => "A man forms an unexpected bond with a transient woman living in her car that's parked in his driveway.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/47T0HORY9gs"},
 
             {:title => "Don Verdean",
                 :synopsis => "A self-professed biblical archaeologist who has fallen on hard times starts to bend the truth in order to continue inspiring the faithful. ",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/0a29hOLd1gA"},
 
             {:title => "The Boy and the World",
                 :synopsis => "A little boy goes on an adventurous quest in search of his father.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/eqdrwu0NvY8"},
 
             {:title => "The Hunger Games: Mockingjay - Part 2",
                 :synopsis => "As the war of Panem escalates to the destruction of other districts by the Capitol, Katniss Everdeen, the reluctant leader of the rebellion, must bring together an army against President Snow, while all she holds dear hangs in the balance.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/n-7K_OjsDCQ"},
 
             {:title => "Krampus",
                 :synopsis => "A boy who has a bad Christmas ends up accidentally summoning a Christmas demon to his family home.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/BqiRZGyU718"},
 
            {:title => "Creed",
                 :synopsis => "The former World Heavyweight Champion Rocky Balboa serves as a trainer and mentor to Adonis Johnson, the son of his late friend and former rival Apollo Creed.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/embed/KwwLxNfBFmc"},
 
            {:title => "The Good Dinosaur",
                 :synopsis => "An epic journey into the world of dinosaurs where an Apatosaurus named Arlo makes an unlikely human friend.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=daFnEiLEx70"},
 
            {:title => "Spectre",
                 :synopsis => "A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=LTDaET-JweU"},
 
            {:title => "The Night Before",
                 :synopsis => "On Christmas eve, three lifelong friends, two of whom are Jewish, spend the night in New York City looking for the Holy Grail of Christmas parties.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=kOBdxkhJvHQ"},
 
            {:title => "The Penuts Movie",
                 :synopsis => "Snoopy embarks upon his greatest mission as he and his team take to the skies to pursue their arch-nemesis, while his best pal Charlie Brown begins his own epic quest back home.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=8pCoVQDD-OY"},
 
            {:title => "Spotlight",
                 :synopsis => "The true story of how the Boston Globe uncovered the massive scandal of child molestation and cover-up within the local Catholic Archdiocese, shaking the entire Catholic Church to its core.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=tb_WgKDqPsE"},
 
            {:title => "Brooklyn",
                 :synopsis => "An Irish immigrant lands in 1950s Brooklyn, where she quickly falls into a new romance. When her past catches up with her, however, she must choose between two countries and the lives that exist within.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=-pBfqEP2_J4"},
 
            {:title => "Secret in Their Eyes",
                 :synopsis => "A tight-knit team of rising investigators, along with their supervisor, is suddenly torn apart when they discover that one of their own teenage daughters has been brutally murdered.",
-                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+                :release_date => Faker::Date.between(600.days.ago, Date.today), :trailer_url => "https://www.youtube.com/watch?v=N3b0PFCrayE"},
 
            {:title => "Where the Wild Things Are",
                 :synopsis => "Max (Max Records) is a young boy who feels misunderstood and wants to have fun all the time. He makes an igloo out of snow, but his sister's friends gang up on him and smash it. After making a scene in front of his mother's boyfriend, Max bites his mother and runs away. He keeps running until he stumbles upon a small boat; he climbs aboard and sets sail.\n
