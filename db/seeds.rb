@@ -19,17 +19,26 @@ users = 25.times.map do
                 :confirmed_at => Time.now )
 end
 
-movies = 50.times.map do
-  Movie.create!(:title => Faker::App.name,
+movies = [ {:title => Faker::App.name,
                 :synopsis => Faker::Lorem.paragraph(2, true),
-                :release_date => Faker::Date.between(600.days.ago, Date.today) )
+                :release_date => Faker::Date.between(600.days.ago, Date.today)},
+            {:title => Faker::App.name,
+                :synopsis => Faker::Lorem.paragraph(2, true),
+                :release_date => Faker::Date.between(600.days.ago, Date.today)}]
 
-end
+Movie.create!(movies)
+
+# movies = 50.times.map do
+#   Movie.create!(:title => Faker::App.name,
+#                 :synopsis => Faker::Lorem.paragraph(2, true),
+#                 :release_date => Faker::Date.between(600.days.ago, Date.today) )
+
+# end
 
 critic_reviews = 100.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
                   :content => Faker::Lorem.paragraph(2, true),
-                  movie: movies.sample,
+                  movie: Movie.all.sample,
                   user: critics.sample,
                   :movie_rating => rand(1..5) )
 end
@@ -37,7 +46,7 @@ end
 user_reviews = 100.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
                   :content => Faker::Lorem.paragraph(2, true),
-                  movie: movies.sample,
+                  movie: Movie.all.sample,
                   user: users.sample,
                   :movie_rating => rand(1..5) )
 end
