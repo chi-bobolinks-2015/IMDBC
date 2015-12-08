@@ -1,9 +1,7 @@
-<h1>Movie Show Page!</h1>
-
 <ul>
-  <h2><%= @movie.title %></h2>
-  <li><h3>synopsis: </h3><%= @movie.synopsis %></li>
-  <li><h3>release date: </h3><%= @movie.release_date %></li>
+  <h1><%= @movie.title %></h1>
+  <li><h3>Synopsis: </h3><%= @movie.synopsis %></li>
+  <li><h3>Release date: </h3><%= @movie.release_date.strftime("%d %b. %Y") %></li>
 
   <% if @movie.reviews.length == 0 %>
     <p>No reviews yet</p>

@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def index
     @critics = User.where(critic: true)
     @users = User.where(critic: false)
-    # Add statement to account for new users, where critic: nil
   end
 
   def show
