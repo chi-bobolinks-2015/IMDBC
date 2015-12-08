@@ -1,7 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :movie
-  # has_many :comments
+  has_many :comments
 
   # def self.critic_ratings(movie)
   # Review.all.where(movie_id: movie.id)
