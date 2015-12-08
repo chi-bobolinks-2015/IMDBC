@@ -2,3 +2,9 @@
 <% @users.each do |user| %>
   <p><%= link_to "#{user.username}", user_path(user) %></p>
 <% end %>
+
+<!-- Move this link to user show page. -->
+<p>Do you want to update your profile?</p>
+<% if current_user %>
+    <%= link_to "edit profile", edit_user_registration_path %>
+<% end %>
