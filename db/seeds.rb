@@ -7,7 +7,7 @@ critics = 25.times.map do
   User.create!( :username => Faker::Internet.user_name,
                 :email    => Faker::Internet.email,
                 :password   => 'password',
-                # :critic => true,
+                :critic => true,
                 :confirmed_at => Time.now )
 end
 
@@ -15,7 +15,7 @@ users = 25.times.map do
   User.create!( :username => Faker::Internet.user_name,
                 :email    => Faker::Internet.email,
                 :password   => 'password',
-                # :critic => false,
+                :critic => false,
                 :confirmed_at => Time.now )
 end
 
