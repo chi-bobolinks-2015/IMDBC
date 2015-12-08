@@ -9,7 +9,6 @@ ratyrate_rateable "overall"
   end
 
   def critic_reviews
-    # Rate.all.where(rateable_id: self.id, :rater_id => User.all.where(critic: true))
     self.reviews.where(movie_id: self.id, :user_id => User.all.where(critic: true))
   end
 
@@ -17,17 +16,18 @@ ratyrate_rateable "overall"
     self.reviews.where(movie_id: self.id, :user_id => User.all.where(critic: false))
   end
 
-  def average_rating(array)
-    if array.length == 0
-      return nil
-    else
-    x = array
-      .map(&:movie_rating)
+  def average_ratingz(boolean) #(boolean for critic true || false)
+    ratings_array = Rate.all.where(:rateable_id => self.id, :rater_id => User.all.where(critic: boolean))
+      .map(&:stars)
       .map(&:to_f)
-      .reduce(:+)
 
-    average = x / array.length
-    average.round(2)
-    end
+    x = ratings_array.reduce(:+)
+
+    average = x / ratings_array.length
+    average.round(2) ? average.round(2) : 0
+   # avg = x ? x.avg : 0
+   # avg.round(1)
   end
+
+
 end

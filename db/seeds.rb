@@ -100,21 +100,18 @@ movies = [ {:title => "In the Heart of the Sea",
 
 Movie.create!(movies)
 
-# movies = 50.times.map do
-#   Movie.create!(:title => Faker::App.name,
-#                 :synopsis => Faker::Lorem.paragraph(2, true),
-#                 :release_date => Faker::Date.between(600.days.ago, Date.today) )
 
-# end
+rates = User.all.each do |user|
+    Movie.all.each do |movie|
+      Rate.create!(rater_id: user.id, rateable_id: movie.id, rateable_type: "Movie", dimension: "overall", stars: rand(1..5))
+    end
+  end
 
-rates = 50.times.map do
-  Rate.create!(rater_id: User.all.sample.id, rateable_id: Movie.all.sample., rateable_type: "Movie", dimension: "overall", stars: 4)
 critic_reviews = 100.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
                   :content => Faker::Lorem.paragraph(word_count=225, true),
                   movie: Movie.all.sample,
-                  user: critics.sample,
-                  :movie_rating => rand(1..5) )
+                  user: critics.sample)
 end
 
 user_reviews = 100.times.map do

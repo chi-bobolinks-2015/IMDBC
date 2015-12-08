@@ -10,4 +10,8 @@ class RaterController < ApplicationController
       render :json => false
     end
   end
+
+  # def rating_for
+  #   round = options[:round] || 2
+  # end
 end

@@ -4,6 +4,6 @@
 <h4>CLICK on a movie title to read reviews:</h4>
 <ul>
   <% @movies.each do |movie| %>
-  <li><%= link_to "#{movie.title}", movie_path(movie) %></li>
+  <li><%= link_to "#{movie.title}", movie_path(movie) %>  <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= movie.average_ratingz(true) %></p></div></li>
   <% end %>
 </ul>
