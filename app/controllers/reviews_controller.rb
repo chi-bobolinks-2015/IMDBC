@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
   # end
 
   def show
-    puts params[:id]
     @comments = Comment.where(review_id: params[:id])
   end
 
