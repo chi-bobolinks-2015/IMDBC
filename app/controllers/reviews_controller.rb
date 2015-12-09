@@ -26,7 +26,12 @@ class ReviewsController < ApplicationController
     # # p params
     # @movie = Movie.find(@review.movie_id)
     if @review.valid?
-      redirect_to movie_path(@movie)
+      if simple_captcha_valid?
+        redirect_to movie_path(@movie)
+      else
+        flash.notice = "Captcha not quite right! Please try again...."
+        render 'new'
+      end
     else
       render 'new'
     end
