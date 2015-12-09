@@ -179,6 +179,7 @@ critic_reviews1 = [
     content: "For those of us from a certain time, the “Peanuts” comic strip is a definite part of our growing up. I collected the paperback books, read the daily comic strips and can proudly say that I am so old that I can remember watching “A Charlie Brown Christmas” when it debuted! Five decades of memories are treated with the respect they deserve in the new film “The Peanuts Movie.” \n As the film begins, the gang are celebrating a new snow fall, which signals a snow day. We gradually meet all of the familiar characters (Linus, Lucy, Sally and, of course, Snoopy). And we meet a new one when a moving truck shows up. The family consists of a mother and father and a pretty little red-headed girl. Cue the arrows to the heart – Charlie Brown is in love. \n A production from the same group that made the “Ice Age” films, I have to give great credit to the filmmakers for keeping the look of the characters the same. Even though the animation is done via CGI, the way the characters move and interact is similar to the original hand-drawn films and television specials from the past. Each character is given their familiar traits (Lucy’s vainness, Schroeder’s piano playing, Linus and his blanket) and situations. Each character is given their due, almost as if the film was a true ensemble piece. The story is straight-forward but will be entertaining for both young and old viewers.",
     movie: Movie.find_by(title: "The Peanuts Movie"),
     user: critics.sample},
+
   {title: "Sleek and Serious.",
     content: "Ever since Daniel Craig took over the role of 007, the Bond franchise has been moving toward a more grounded, John La Carre-style spy thriller and away from the cartoony gadgets of the Roger Moore era. Villains don’t have grand schemes like robbing Fort Knox but rather something more nebulous and sinister like controlling global technology. But some things – like Bond’s banter with evil masterminds – never quite goes away. \n 'SPECTRE' is a sleek, stylish entry in the modern Bond films. There’s less action, more exposition but also an ambitious overarching story arc. It’s a solid, serious spy film that still has a playful glint in its eye.",
     movie: Movie.find_by(title: "Spectre"),
@@ -187,7 +188,134 @@ critic_reviews1 = [
   {title: "The Haunting of James Bond",
     content: "The decision, starting in Quantum of Solace, to make Bond a rogue agent operating outside the umbrella of Queen and Country—and then Javier Bardem’s Silva an ex-MI6 operative with an axe to grind—was to eschew those reliable standbys, good and evil (white and black, like a tuxedo) and instead cloak the old warhorse in those fashionable shades of grey that all the kids (and comic-book-movie-worshipping adultcritics) like to rave about these days. If a spectre was haunting the proceedings, it was the ghost of Christopher Nolan, whose fanatical need to connect and reflect his good guys and bad guys off of one another typically borders on the pathological—and requires a heaping ton of convoluted backstory to boot. This all gets even worse in Spectre, where Waltz’s You-Know-Who explains to a stricken-looking Daniel Craig: “It was me, James, the author of all your pain..",
     movie: Movie.find_by(title: "Spectre"),
-    user: critics.sample}]
+    user: critics.sample},
+
+  {title: "Too long",
+    content: "That's right. In a film that feels about 20 minutes too long you don't get to the money shot for almost two hours! And with that much time to kill you may find yourself dreaming of a few martinis - be they shaken or stirred!",
+    movie: Movie.find_by(title: "Spectre"),
+    user: critics.sample},
+
+  {title: "Good Humor",
+    content: "McKay invents his own glorious goofball syntax: part business thriller, part stand-up comedy, with a liberal dash of NPR didacticism.",
+    movie: Movie.find_by(title: "The Big Short"),
+    user: critics.sample},
+
+  {title: "Great Director, not Best Work",
+    content: "McKay deserves a lot of credit for making it, and he also deserves to be taken seriously now as a filmmaker. Because with The Big Short, he's graduated from wiseass to wise man.",
+    movie: Movie.find_by(title: "The Big Short"),
+    user: critics.sample},
+
+
+  {title: "Too Dramatic",
+    content: "The dramatic scenes are a touch overcooked, and there are moments when it feels like a particularly high-end school play, with everyone shouting Avast! and Ahoy! like they really mean it. The action, though, is consistently impressive.",
+    movie: Movie.find_by(title: "In the Heart of the Sea"),
+    user: critics.sample},
+
+  {title: "The Book was Better",
+    content: "It lacks all the social symbolism that make the novel such a classic, becoming a simple special effects driven story that takes itself too seriously. [Full review in Spanish]",
+    movie: Movie.find_by(title: "In the Heart of the Sea"),
+    user: critics.sample},
+
+  {title: "Fun",
+    content: "Fans of Napoleon Dynamite will still recognize a sort of awkward whimsy in Don Verdean, but if that style was too niche for some audiences, Don Verdean puts more emphasis on making as many jokes as possible.",
+    movie: Movie.find_by(title: "Don Verdean"),
+    user: critics.sample},
+
+  {title: "Three Stooges?",
+    content: "This film needs to either have some resemblance real life or be a lot more absurd. Right now it's kind of like the Three Stooges if instead of hitting each other they just showed up in funny costumes and stood around.",
+    movie: Movie.find_by(title: "Don Verdean"),
+    user: critics.sample},
+
+  {title: "Wonderful Graphics",
+    content: "A simple, universal parable played out in boldly imaginative (though not particularly high-tech) design terms, Brazilian animator Ale Abreu's second feature, The Boy and the World, is an enchanting visual treat.",
+    movie: Movie.find_by(title: "The Boy and the World"),
+    user: critics.sample},
+
+  {title: "Wonderful Graphics",
+    content: "A simple, universal parable played out in boldly imaginative (though not particularly high-tech) design terms, Brazilian animator Ale Abreu's second feature, The Boy and the World, is an enchanting visual treat.",
+    movie: Movie.find_by(title: "The Boy and the World"),
+    user: critics.sample},
+  {title: "Great",
+    content: "Even if the film could be accused of lacking subtlety and overloading on whimsy, it spreads a sobering message in a lucid story that remains visually alive and inventive throughout -- its aesthetic keeps constantly shifting yet remains fluid.",
+    movie: Movie.find_by(title: "The Boy and the World"),
+    user: critics.sample},
+  {title: "Not Impressed",
+    content: "An enjoyable Christmas horror comedy, but one that never quite goes far enough over the top.",
+    movie: Movie.find_by(title: "Krampus"),
+    user: critics.sample},
+
+  {title: "Nothing Exciting",
+    content: "Not an outright disaster by any means, but neither is this seasonal horror picture anything to get excited about.",
+    movie: Movie.find_by(title: "Krampus"),
+    user: critics.sample},
+
+  {title: "Amazing",
+    content: "Spotlight is not only gripping but a great introduction to Journalism 101, making it easily the best newspaper film since All the President's Men.",
+    movie: Movie.find_by(title: "Spotlight"),
+    user: critics.sample},
+
+  {title: "Super",
+    content: "The best drama of the year.",
+    movie: Movie.find_by(title: "Spotlight"),
+    user: critics.sample},
+
+  {title: "Great Acting",
+    content: "Ray builds an effective aura of menace and frustrated justice, with fine acting all around.",
+    movie: Movie.find_by(title: "Secret in Their Eyes"),
+    user: critics.sample},
+
+  {title: "Super",
+    content: "The best drama of the year.",
+    movie: Movie.find_by(title: "Secret in Their Eyes"),
+    user: critics.sample},
+
+  {title: "Redo",
+    content: "While it doesn't quite pack the emotional or political heft of the original, Secret In Their Eyes isn't just another meaningless redo.",
+    movie: Movie.find_by(title: "Secret in Their Eyes"),
+    user: critics.sample},
+
+  {title: "Hilarious!",
+    content: "Funny, twisted, and just down right great film. I cant even call it a be movie though most of the actors ended up on theat list. Except for Neo..haha. I loved this soo much younger i stayed up to watch it when i should have been sleep and almost woke my parents due to laughing.",
+    movie: Movie.find_by(title: "The Night Before"),
+    user: critics.sample},
+
+  {title: "Funny",
+    content: "A hilarious film!",
+    movie: Movie.find_by(title: "The Night Before"),
+    user: critics.sample},
+
+  {title: "Tom Hardey ftw!",
+    content: "The movie's a testament to the Krays' ability to get away with everything - for a while, anyway. But it's better evidence of Tom Hardy's ability to do just about anything.",
+    movie: Movie.find_by(title: "Legend"),
+    user: critics.sample},
+
+  {title: "Tom Hardey!!!!!",
+    content: "Watching Tom Hardy nearly upstage himself in the gangster biopic Legend makes for mesmerizing viewing. It's also an object lesson in how great acting can transcend a film's limitations.",
+    movie: Movie.find_by(title: "Legend"),
+    user: critics.sample},
+
+  {title: "You Can Take Your Grandma Here",
+    content: "It's a movie you can take Grandma to - and one that might induce Grandma to reminisce about the dark passages and tough choices of her youth.",
+    movie: Movie.find_by(title: "Brooklyn"),
+    user: critics.sample},
+
+  {title: "Great Acting",
+    content: "Saoirse Ronan plays the role of the Irish girl who comes to America, with determination and personality.",
+    movie: Movie.find_by(title: "Brooklyn"),
+    user: critics.sample},
+
+  {title: "Too Melancholy",
+    content: "Unnecessarily gloomy and emotionally convoluted, Spike Jonze and Dave Eggers' script for Where the Wild Things Are is a melancholy adaptation of the one-two punch that is the heavily illustrated, scantly written book by Maurice Sendak.",
+    movie: Movie.find_by(title: "Where the Wild Things Are"),
+    user: critics.sample},
+
+  {title: "I liked it",
+    content: "What Spike Jonze is doing is trying something completely new, messing with the idea of what exactly a movie is, what a narrator is, what a filmmaker is, really, and doing it with a beloved franchise and a $80 million budget.",
+    movie: Movie.find_by(title: "Where the Wild Things Are"),
+    user: critics.sample}
+  ]
+
+
 
 Review.create!(critic_reviews1)
 
