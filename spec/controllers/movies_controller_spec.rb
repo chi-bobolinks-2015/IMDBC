@@ -57,7 +57,7 @@ describe MoviesController do
 
   describe 'GET #edit' do
     it 'assigns the requested movie as @movie' do
-      get :show, { id: movie.to_param }
+      get :edit, { id: movie.to_param }
       expect(assigns(:movie)).to eq(movie)
     end
   end
