@@ -88,7 +88,7 @@ movies = [ {:title => "In the Heart of the Sea",
                 :synopsis => "The true story of how the Boston Globe uncovered the massive scandal of child molestation and cover-up within the local Catholic Archdiocese, shaking the entire Catholic Church to its core.",
                 :release_date => DateTime.new(2015, 11, 25), :trailer_url => "https://www.youtube.com/embed/tb_WgKDqPsE"},
 
-           {:title => "Brooklyn",
+          {:title => "Brooklyn",
                 :synopsis => "An Irish immigrant lands in 1950s Brooklyn, where she quickly falls into a new romance. When her past catches up with her, however, she must choose between two countries and the lives that exist within.",
                 :release_date => DateTime.new(2015, 11, 06), :trailer_url => "https://www.youtube.com/embed/-pBfqEP2_J4"},
 

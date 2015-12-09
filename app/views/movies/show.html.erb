@@ -1,41 +1,43 @@
-<ul>
-  <h1><%= @movie.title %></h1>
-  <li><h3>Synopsis: </h3><%= @movie.synopsis %></li>
-  <li><h3>Release date: </h3><%= @movie.release_date.strftime("%d %b. %Y") %></li>
+<div id="movie-show-info">
+  <ul>
+    <h1><%= @movie.title %></h1>
+    <li id="video"><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
+    <li><h3>Synopsis: </h3><%= @movie.synopsis %></li>
+    <li><h3>Release date: </h3><%= @movie.release_date.strftime("%d %b. %Y") %></li>
 
-  <% if @movie.reviews.length == 0 %>
-    <p>No reviews yet</p>
-  <% else %>
+    <% if @movie.reviews.length == 0 %>
+      <p>No reviews yet</p>
+    <% else %>
 
-  <% if @movie.critic_reviews.length > 0 %>
+    <% if @movie.critic_reviews.length > 0 %>
 
-  <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div>
+    <li id="critic-star"><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div></li>
+</div>
 
-  <li><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
-
-  <% if user_signed_in? %>
-    <%= button_to "Write a Review", new_movie_review_path(movie_id: @movie.id), :method => "get" %>
-  <% end %>
-
-    <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
-      <ul>
-        <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
-        <li><%= review.content.truncate(75, separator: ' ') %></li>
-        <li><%= link_to "#{review.user.username}", user_path(review.user) %></li>
-      </ul>
-      <% end %>
+    <% if user_signed_in? %>
+      <%= button_to "Write a Review", new_movie_review_path(movie_id: @movie.id), :method => "get" %>
     <% end %>
-    <% if @movie.user_reviews.length > 0 %>
-       <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(false) %></p></div>
-      <li><h3>User Reviews: </h3><% @movie.user_reviews.each do |review| %></li>
+
+    <div id="movie-reviews">
+      <li><h3 id="critic-reviews">Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
         <ul>
           <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
           <li><%= review.content.truncate(75, separator: ' ') %></li>
+          <li><%= link_to "#{review.user.username}", user_path(review.user) %></li>
         </ul>
+        <% end %>
       <% end %>
+      <div id="user-reviews">
+      <% if @movie.user_reviews.length > 0 %>
+         <li id="user-star"><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(false) %></p></div></li>
+        <li><h3 id="user-reviews">User Reviews: </h3><% @movie.user_reviews.each do |review| %></li>
+          <ul>
+            <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
+            <li><%= review.content.truncate(75, separator: ' ') %></li>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
     <% end %>
-  <% end %>
-</ul>
-
-
-
+    </div>
+  </ul>

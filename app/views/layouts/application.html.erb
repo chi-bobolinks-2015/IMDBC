@@ -14,8 +14,8 @@
     <div class="nav">
 
       <ul>
-        <li>
-          <%= link_to "home", root_path %>
+        <li id="imdbc">
+          <%= link_to "IMDbc", root_path %>
         </li>
         <li>
           <% if user_signed_in? %>
@@ -38,7 +38,7 @@
         <div class="input-append">
         <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search movies..." %>
 
-        <button class="btn" type="submit"><i class="icon-search"></i></button>
+        <button class="btn" type="submit">search<i class="icon-search"></i></button>
         </div>
         <% end %>
       </div>
