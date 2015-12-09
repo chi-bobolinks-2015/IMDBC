@@ -8,11 +8,11 @@
   <!-- else the rest shows for everyone -->
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content, autofocus: true %>
+    <%= f.text_area :content, autofocus: true, size: "125 x 15" %>
   </div>
 
   <div class="field">
-    Rate The Movie: <%= rating_for @movie, "overall", :enable_half => true %>
+    Rate The Movie <%= rating_for @movie, "overall", :enable_half => true %>
   </div>
 
   <%= show_simple_captcha %>
