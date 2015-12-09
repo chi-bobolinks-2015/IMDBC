@@ -108,7 +108,7 @@ rates = User.all.each do |user|
     end
   end
 
-critic_reviews = [
+critic_reviews1 = [
   {:title => "A journey going absolutely nowhere",
     :content => "The film of The Lady in the Van becomes a journey in which Bennett pieces together the arc of Miss Shepherd’s life while tending to his own middle-class failing mother, who’s increasingly deluded but none too swift even with her full faculties. The inside of Miss Shepherd’s van — crammed with newspapers, street junk, and inorganic and organic filth — is visible every time she opens the back doors, which she does often. We watch her inside gazing at the telly. We see flashbacks to her younger self as a gifted pianist forced to give up music by repressive nuns. We follow her on a road trip. We find out that she had a tragic accident that drove her underground and that a sinister stranger (Jim Broadbent) comes by to see her on occasion. \n The mystery is gone and so, frankly, is the thrill. But Maggie Smith does her best to give the role some edge. She is fiercely unlikable, demanding help rather than asking for it, and managing to look scary rather than cute in a wheelchair flying the Union Jack. One scene reminds you of her greatness. On that road trip, Miss Shepherd wanders into a senior-citizens’ center and watches a young woman play the piano. The mask of distaste dissolves before your eyes and you see the tragedy of her life. \n Not everyone recoils from The Lady in the Van the way I do. It apparently plays well with older audiences and some critics praise its abiding sweetness. My adoration for Bennett’s published diaries doubtless colors my belief that, as a playwright and screenwriter, he went astray. I don’t think he dramatized this blessed accident in his life. I think he worried it to death.",
     movie: Movie.find_by(title: "The Lady in the Van"),
@@ -189,6 +189,7 @@ critic_reviews = [
     movie: Movie.find_by(title: "Spectre"),
     user: critics.sample}]
 
+Review.create!(critic_reviews1)
 
 critic_reviews = 70.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
