@@ -7,7 +7,7 @@ body a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1 {
   font-family: papyrus;
 }
 
@@ -53,8 +53,21 @@ li {
   padding: 1em 4em 1em 4em;
 }
 
-#homepage_movies {
+#home-headers {
+  text-align: center;
+}
 
+
+#index_movie_grid {
+  position: relative;
+  display: inline-grid;
+  width: 85%;
+}
+
+#index_movie {
+  float: left;
+  width: 5em;
+  padding: 2em;
 }
 
 #release_date {
@@ -85,10 +98,13 @@ ul {
 
 div#slider {
   overflow: hidden;
-  height: 30em;
+  height: 14em;
+  /*border: 2px solid black;
+  border-radius: 1px;*/
 }
 
 div#slider figure img {
+  position: relative;
   width: 20%;
   float: left;
 }
@@ -100,5 +116,10 @@ div#slider figure {
   left: 0;
   text-align: left;
   font-size: 0;
-  animation: 60s slidy infinite;
+  animation: 45s slidy infinite;
+}
+
+div#gallery {
+  margin: 0 auto;
+  width: 20em;
 }
