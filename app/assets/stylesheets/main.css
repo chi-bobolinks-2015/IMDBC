@@ -59,6 +59,7 @@ li {
 
 
 #index_movie_grid {
+  margin-left: 8em;
   position: relative;
   display: inline-grid;
   width: 85%;
@@ -66,7 +67,7 @@ li {
 
 #index_movie {
   float: left;
-  width: 5em;
+  width: 7em;
   padding: 2em;
 }
 
@@ -81,6 +82,15 @@ ul {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 0;
+}
+
+.btn {
+  padding: .2em;
+}
+
+#imdbc a {
+  font-weight: bolder;
+  color: black;
 }
 
 /*HOMEPAGE IMAGE SLIDER*/
@@ -116,7 +126,7 @@ div#slider figure {
   left: 0;
   text-align: left;
   font-size: 0;
-  animation: 45s slidy infinite;
+  animation: 50s slidy infinite;
 }
 
 div#gallery {
