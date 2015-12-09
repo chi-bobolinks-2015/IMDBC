@@ -29,5 +29,9 @@ ratyrate_rateable "overall"
    # avg.round(1)
   end
 
+  def return_rating_for_review(critic)
+    rating = Rate.all.where(:rateable_id => self.id, :rater_id => critic.id)[0]
+    rating.stars
+  end
 
 end
