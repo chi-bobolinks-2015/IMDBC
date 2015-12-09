@@ -1,5 +1,13 @@
 body {
-  font-family: papyrus, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: papyrus;
 }
 
 li {
@@ -44,10 +52,13 @@ li {
   padding: 1em 4em 1em 4em;
 }
 
+#homepage_movie {
+  
+}
+
 #release_date {
-  font-size: .8em;
+  font-size: .7em;
   font-weight: bolder;
-  float: right;
 }
 
 ul {
@@ -57,4 +68,3 @@ ul {
     -webkit-margin-end: 0;
     -webkit-padding-start: 0;
 }
-
