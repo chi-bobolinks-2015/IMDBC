@@ -9,10 +9,13 @@
 
   <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div>
 
-
-    <% if @movie.critic_reviews.length > 0 %>
+  <% if @movie.critic_reviews.length > 0 %>
 
   <li><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
+
+  <% if user_signed_in? %>
+    <%= button_to "Write a Review", new_movie_review_path(movie_id: @movie.id), :method => "get" %>
+  <% end %>
 
     <li><h3>Critic Reviews: </h3><% @movie.critic_reviews.each do |review| %></li>
       <ul>
@@ -34,9 +37,5 @@
   <% end %>
 </ul>
 
-<p></p>
-<% if user_signed_in? %>
-  <%= button_to "Write a Review", new_movie_review_path(movie_id: @movie.id), :method => "get" %>
-<% end %>
 
 
