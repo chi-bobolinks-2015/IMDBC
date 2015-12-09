@@ -7,9 +7,9 @@
     <p>No reviews yet</p>
   <% else %>
 
-  <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div>
-
   <% if @movie.critic_reviews.length > 0 %>
+
+  <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div>
 
   <li><iframe width="560" height="315" src=<%= @movie.trailer_url %> frameborder="0" allowfullscreen></iframe></li>
 

@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Comment do
+  let (:comment) { FactoryGirl.create(:comment) }
+
+  describe "FactoryGirl setup" do
+    it "creates a comment" do
+      expect(comment).to be_a(Comment)
+    end
+  end
 end
