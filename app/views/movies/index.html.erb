@@ -1,12 +1,27 @@
-<h1>IMDbc</h1>
-<h2>A Conversation about film. A celebration of the critic.</h2>
-<h4>Learn about our trusted critics and network of users <%= link_to 'HERE', users_path %>.</h4>
-<h4>CLICK on a movie title to read reviews:</h4>
-<ul>
+<div id="gallery">
+  <div id="slider">
+    <figure>
+      <img src="/assets/The-Big-Short-600x936.jpg">
+      <img src="/assets/In-the-Heart-of-the-Sea-Poster.jpg">
+      <img src="/assets/The-Lady-in-the-Van-new-poster.jpg">
+      <img src="/assets/the-good-dinosaur.jpg">
+      <img src="/assets/legend-poster-guardian.jpg">
+    </figure>
+  </div>
+</div>
+
+<div id="home-headers">
+  <h2>A conversation about film. A celebration of the critic.</h2>
+  <h4>Learn about our trusted critics and network of users <%= link_to 'HERE', users_path %></h4>
+  <h4>CLICK on a movie title to read reviews</h4>
+</div>
+
+<div id ="index_movie_grid">
   <% @movies.each do |movie| %>
-   <div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= movie.average_ratingz(true) %></p></div></li>
+    <div id="index_movie">
+      <li><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;position:relative;><p style=position:relative;line-height:85px;text-align:center;> <%= movie.average_ratingz(true) %></p></div></li>
 
-  <li><%= link_to "#{movie.title}", movie_path(movie) %> <span id="release_date"><%= movie.release_date.strftime("%d %b. %Y") %></span></li>
-
+     <li><%= link_to "#{movie.title}", movie_path(movie) %> <span id="release_date"><%= movie.release_date.strftime("(%Y)") %></span></li>
+   </div>
   <% end %>
-</ul>
+</div>
