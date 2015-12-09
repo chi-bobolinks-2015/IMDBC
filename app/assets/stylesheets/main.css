@@ -146,12 +146,19 @@ div#gallery {
   padding: 1em;
   position: relative;
   right: 3em;
-  top: 3em;
+  top: 7.5em;
+}
+
+#user-reviews li#user-star {
+  float: left;
+  padding: 1em;
+  position: relative;
+  right: 3.2em;
 }
 
 #movie-reviews h3#critic-reviews {
   position: relative;
-  right: 2.5em;
+  left: 2em;
   font-weight: bolder;
   font-size: 1.5em;
 }
@@ -165,7 +172,7 @@ div#gallery {
 }
 
 #movie-reviews {
-  margin-top: 7em;
+  margin-top: 10em;
 }
 
 #user-reviews {
@@ -173,10 +180,11 @@ div#gallery {
   padding: 1em;
 }
 
-#user-reviews li#user-star {
-  float: left;
-  padding: 1em;
-  position: relative;
-  right: 3.2em;
-  top: em;
+/*FORMS*/
+form.new_review {
+  line-height: 1.5em;
+}
+
+form.new_review input[type="submit"] {
+  margin-top: 1em;
 }
