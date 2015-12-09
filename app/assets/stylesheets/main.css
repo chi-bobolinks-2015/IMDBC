@@ -133,3 +133,50 @@ div#gallery {
   margin: 0 auto;
   width: 20em;
 }
+
+/*MOVIE SHOW PAGE*/
+#movie-show-info li#video {
+  float: right;
+  padding: 1em;
+  position: relative;
+}
+
+#movie-show-info li#critic-star {
+  float: left;
+  padding: 1em;
+  position: relative;
+  right: 3em;
+  top: 3em;
+}
+
+#movie-reviews h3#critic-reviews {
+  position: relative;
+  right: 2.5em;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+#movie-reviews h3#user-reviews {
+  position: relative;
+  font-weight: bolder;
+  font-size: 1.5em;
+  right: 2.5em;
+  top: .5em;
+}
+
+#movie-reviews {
+  margin-top: 7em;
+}
+
+#user-reviews {
+  position: relative;
+  padding: 1em;
+}
+
+#user-reviews li#user-star {
+  float: left;
+  padding: 1em;
+  position: relative;
+  right: 3.2em;
+  top: em;
+}
