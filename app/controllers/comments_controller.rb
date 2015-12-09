@@ -12,7 +12,12 @@ class CommentsController < ApplicationController
     @comment = @review.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to movie_review_path(@movie, @review)
+      if simple_captcha_valid?
+        redirect_to movie_review_path(@movie, @review)
+      else
+        flash.notice = "Captcha not quite right! Please try again...."
+        render 'new'
+      end
     else
       render 'new'
     end
