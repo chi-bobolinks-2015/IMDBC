@@ -7,6 +7,14 @@ body a {
   text-decoration: none;
 }
 
+.container a {
+  color: #3B5555;
+}
+
+.container a:hover {
+  color: #909C9C;
+}
+
 h1 {
   font-family: papyrus;
 }
@@ -16,7 +24,7 @@ li {
 }
 
 .nav {
-  background-color: #93b1c6;
+  background-color: #516969;
   height: 6em;
 }
 
@@ -91,6 +99,15 @@ ul {
 #imdbc a {
   font-weight: bolder;
   color: black;
+}
+
+#imdbc a:hover {
+  font-weight: bolder;
+  color: #c7d0d5;
+}
+
+.field {
+  padding: .5em;
 }
 
 /*HOMEPAGE IMAGE SLIDER*/
@@ -187,4 +204,5 @@ form.new_review {
 
 form.new_review input[type="submit"] {
   margin-top: 1em;
+  padding: .3em;
 }
