@@ -3,6 +3,21 @@ Movie.delete_all
 Review.delete_all
 Comment.delete_all
 
+# So we always have a critic and a user we know the password for in advance
+default_critic = User.create!( :username => "hana",
+                :email    => "hana@gmail.com",
+                :password   => '12345678',
+                :critic => true,
+                :confirmed_at => Time.now )
+
+default_user  = User.create!( :username => "regina",
+                :email    => "regina@gmail.com",
+                :password   => '12345678',
+                :critic => false,
+                :confirmed_at => Time.now )
+
+
+#generic critics and users
 critics = 25.times.map do
   User.create!( :username => Faker::Internet.user_name,
                 :email    => Faker::Internet.email,
@@ -11,7 +26,7 @@ critics = 25.times.map do
                 :confirmed_at => Time.now )
 end
 
-users = 25.times.map do
+users = 20.times.map do
   User.create!( :username => Faker::Internet.user_name,
                 :email    => Faker::Internet.email,
                 :password   => 'password',
@@ -93,7 +108,89 @@ rates = User.all.each do |user|
     end
   end
 
-critic_reviews = 100.times.map do
+critic_reviews = [
+  {:title => "A journey going absolutely nowhere",
+    :content => "The film of The Lady in the Van becomes a journey in which Bennett pieces together the arc of Miss Shepherd’s life while tending to his own middle-class failing mother, who’s increasingly deluded but none too swift even with her full faculties. The inside of Miss Shepherd’s van — crammed with newspapers, street junk, and inorganic and organic filth — is visible every time she opens the back doors, which she does often. We watch her inside gazing at the telly. We see flashbacks to her younger self as a gifted pianist forced to give up music by repressive nuns. We follow her on a road trip. We find out that she had a tragic accident that drove her underground and that a sinister stranger (Jim Broadbent) comes by to see her on occasion. \n The mystery is gone and so, frankly, is the thrill. But Maggie Smith does her best to give the role some edge. She is fiercely unlikable, demanding help rather than asking for it, and managing to look scary rather than cute in a wheelchair flying the Union Jack. One scene reminds you of her greatness. On that road trip, Miss Shepherd wanders into a senior-citizens’ center and watches a young woman play the piano. The mask of distaste dissolves before your eyes and you see the tragedy of her life. \n Not everyone recoils from The Lady in the Van the way I do. It apparently plays well with older audiences and some critics praise its abiding sweetness. My adoration for Bennett’s published diaries doubtless colors my belief that, as a playwright and screenwriter, he went astray. I don’t think he dramatized this blessed accident in his life. I think he worried it to death.",
+    movie: Movie.find_by(title: "The Lady in the Van"),
+    user: critics.sample},
+
+  {:title => "A meekly gallant invitation",
+    :content => " Nicholas Hytner’s twee film of Alan Bennett’s The Lady in the Van is the final injury to what was, in its original form, a perfect thing: Bennett’s diary entries recounting the appearance of the prodigiously unstable (and unhygienic) but proud “Miss Shepherd” in a broken-down van on his block and her move — at his meekly gallant invitation when she was forced off the public street — to park her vehicle and herself in his driveway. She remained there for 15 years. \n Have you read said entries? Buy Bennett’s audio version and listen to him read in his faintly embarrassed tones, which are no less genuine for having been cultivated. Miss Shepherd exists in the margins of his life, someone he had to reckon seriously with only when she or some crisis in her increasingly enfeebled existence imposed on him. She was — despite some inquiries he made about her background — a mystery to the end. Even the inside of that van was off limits until they removed her body. \nIn his theatrical adaptation and now this screenplay, Bennett gives us not one but two Alan Bennetts, played onscreen by Alex Jennings with a high-tenor squeak just this side of Truman Capote and the sad frown of Stan Laurel. The gimmick is that one Bennett encourages the other to exploit Miss Shepherd (Maggie Smith) as fodder for a play or movie script and add events and interactions that never happened but would play well. The other Bennett worries that he’s exploiting her. He should have just used her — no shame, she was an exhibitionist and is dead now anyway — and gotten on with it. The two Bennetts double his tedious squeamishness, and scenes with his friends (“How’s your old lady?” triple it. We already know how conflicted he is.",
+    movie: Movie.find_by(title: "The Lady in the Van"),
+    user: critics.sample},
+
+  {:title => "'The Lady in the Van' is a showcase for a great performance by Maggie Smith",
+    :content => " I’ve never met anybody who doesn’t love Maggie Smith, and if I ever do I’ll run in the other direction. Despite her reputation for playing snippy dowagers á la “Downton Abbey,” she’s capable of playing anything. (If you doubt me, take a look sometime, for starters, at her portrayal of Desdemona opposite Laurence Olivier in “Othello.”) The same emotional insight that allows her to play the high born with such feeling and felicity is continuous with her genius for playing the low born and indigent, as in “The Lonely Passion of Judith Hearne.” Nowhere is this gift more apparent than in “The Lady in the Van,” where she reprises her famed stage performance as Miss Shepherd – a bag lady who carries herself like bedraggled royalty. \n Adapted by Alan Bennett from his 1999 play, and directed by frequent collaborator Nicholas Hytner (who also directed the stage version), “The Lady in the Van” is a showcase for what is sometimes generically referred to as a tour de force, which often means a celebrated stage performance that ossified long before it hit the screen. The remarkable thing about Smith in “The Lady in the Van” is that, even though the role is no longer fresh for her, the performance certainly is. She gives it everything she’s got because, you feel, she wants to honor this character. She wants Miss Shepherd to live on. \n The movie, which begins in 1970, is billed as “mostly a true story,” which is a bit coy, but this lead-up does invite us to view the drama as a kind of guessing game.\n Bennett (played by Alex Jennings), a celebrated playwright and sometime actor, first encountered Miss Shepherd when she parked her beat-up yellow van in the driveway of his North London townhouse. Well known to the neighborhood as a roaming, persnickety hag, she found a refuge of sorts with Bennett, who, with a mixture of incredulity and writerly fascination, allowed her to take up residence in his driveway until her death 15 years later.",
+    movie: Movie.find_by(title: "The Lady in the Van"),
+    user: critics.sample},
+
+  {:title => "A journey going absolutely nowhere",
+    :content => "The film gets at the ways in which writers find themselves conflicted about exploiting the lives of real people in their writing. Bennett in the movie is split into two selves, both played, using camera trickery, by Jennings. His alter ego is his non-writer self, the one who tells his counterpart, “I live, you write, that’s how it works.” At first, Bennett the playwright, who also cares for his aging, demanding mother, resists the temptation to keep a notebook of observations about Miss Shepherd, despite the fact that she is such obvious “material.” He says “she’s just something that’s happening,” but comes to realize that “you don’t put yourself into what you write, you find yourself there.",
+    movie: Movie.find_by(title: "The Lady in the Van"),
+    user: critics.sample},
+
+  {title: "Relentlessly bleak and action-packed",
+    content: "If you're looking for a bright and breezy popcorn movie, give this a miss. Relentlessly bleak from the first frame, this final outing pulls no punches as white knuckle action sequences see the casualty rate rise alongside the tension. \n The decision to split the final book in author Suzanne Collins' trilogy into two meant that the previous film was light on action, but the result is a last chapter that grips from the beginning, as Katniss and friends face mortal threat after mortal threat. \n Jennifer Lawrence holds everything together with another measured performance as the reluctant leader who must choose between her friends' safety and the cause. \n There are minor failings - the death of a major character is not as affecting as it might be - but on the whole director Francis Lawrence should be applauded for not wavering from the series' downbeat willingness to focus on serious themes while targeting a teenage market.",
+    movie: Movie.find_by(title: "The Hunger Games: Mockingjay - Part 2"),
+    user: critics.sample},
+
+  {title: "It's good.",
+    content: "Mockingjay Part 2 looks spectacular. The costumes are awesome. The acting is on point. And all that solid artistic work kinda but not entirely distracts from a super goofy movie.\n Okay, where are we again? Part 1: There were 'Hunger Games,'' a televised event where children fight to the death with silly obstacles. Katniss won. Part 2: 'Catching Fire,'' Katniss gets so famous from winning, it makes everybody want to overthrow the government. The evil president tries to solve it with yet another Hunger Games, this time an All Star edition including Katniss (that'll teach her!). She escapes. Part 3 Part 1: There's full-frontal rebellion. We ignore it and focus on Katniss's role as Mascot of the Revolution. \n Now we're finally at Part 3: Part 2, and shit's about to get really real. War is raging. Katniss sneaks to the front line. But… oh look it's another Hunger Games. You see, Suzanne Collins had the one idea, an arena where kids fight to death with silly obstacles. So in order to shoe-horn that concept into a war movie, she decides that the evil Capitol will just pull back all its forces and leave a bunch of silly obstacles around the city. Rather than fighting, the war somehow comes down to the same kids from the earlier games trying to avoid magical booby traps. It doesn't make a lot of sense.",
+    movie: Movie.find_by(title: "The Hunger Games: Mockingjay - Part 2"),
+    user: critics.sample},
+
+  {title: "Not a logical movie" ,
+    content: "The Capitol has the ability to create an entire city block that fills with hot oil, ceiling-mounted laser cannons that instantly destroy anything that touches them, and lizard people. And they're losing. THEY HAVE AN ARMY OF LIZARD PEOPLE HOW ARE THEY LOSING THIS WAR???.",
+    movie: Movie.find_by(title: "The Hunger Games: Mockingjay - Part 2"),
+    user: critics.sample},
+  {title: "Landing punches every round" ,
+    content: "Sylvester Stallone hands off the Rocky saga to writer-director Ryan Coogler, who makes the aging Italian Stallion the corner man for a younger boxer who is the illegitimate son of his old adversary Apollo Creed. Coogler's acclaimed debut feature, Fruitvale Station (2013), dealt with the real-life police killing of an unarmed black man in San Francisco, but in keeping with Stallone's wholesome formula for the Rocky movies, there's no racial angle here, just a lot of daddy issues. Michael B. Jordan, who played the victim in Fruitvale Station, injects some juice as Adonis Creed, and the muttering Stallone has a few ostensibly touching moments. But anyone hoping the franchise might open out into new thematic territory will be disappointed; this is the same old ritual, from the amped-up training sequences to the climactic title fight with its absurd number of punches landed in every round.",
+    movie: Movie.find_by(title: "Creed"),
+    user: critics.sample},
+  {title: "Not so much a Rocky sequel as a movie set in the Rocky universe" ,
+    content: "Rocky is a Best Picture winner that became a long-running franchise, which – if we're being honest – stripped a bit of the luster from its Oscar win. The series became sillier, hitting a nadir with Rocky IV, which is admittedly fun in all the wrong kinds of ways. From there, it became slightly gimmicky, bringing in a kid for Rocky V, then going for the standard return-to-roots comeback vibe with Rocky Balboa. All the individual films have their merits to some degree, but none are really on par with the original. The latest sequel, Creed, takes a slightly new approach. It's not so much a Rocky sequel as it is a movie set in the Rocky universe. That's a crucial difference, and one that marks the film as a high point in the franchise. \n Michael B. Jordan plays Adonis Johnson, the illegitimate son of Apollo Creed (famously played by Carl Weathers). A misspent youth, he was eventually taken in by the wife (Phylicia Rashad) Creed cheated on. As a young man, Adonis decides that he, too, wants to be a professional fighter, so he makes his way to Philadelphia, where he convinces Rocky (Sylvester Stallone) to train him. He initially tries to hide his connection to his famous father, but others are intent on bringing the secret to light. Meanwhile, Adonis romances a young singer named Bianca (Tessa Thompson) who lives in his building. Since it wouldn't be right for a Rocky movie to end without a big fight, Creed has one with high personal stakes for the young boxer.",
+    movie: Movie.find_by(title: "Creed"),
+    user: critics.sample},
+  {title: "Innovative Staging" ,
+    content: "The smartest thing Sylvester Stallone did was to not write and/or direct this film, as he did with all the previous sequels (minus Rocky V, which put John G. Avildsen back in the director's chair). Ryan Coogler (Fruitvale Station) brings a fresh set of eyes to the project. He clearly understands and respects the appeal of the 1976 original, and he pays tribute to the franchise as a whole in the screenplay he co-wrote with Aaron Covington. But Coogler also brings his own touches. One of them is some innovative staging, including a dazzling boxing match done entirely in one unbroken shot (or least appearing to be). Another is providing a more internal motivation for the central character. Whereas Rocky wanted to prove himself to the world, Adonis needs to prove himself to himself. He is ashamed of things about his heritage, and believes that being a good fighter will earn him a degree of self-respect that he can't – or won't allow himself to – find any other way.",
+    movie: Movie.find_by(title: "Creed"),
+    user: critics.sample},
+  {title: "Good Old-Fashioned Underdog Story" ,
+    content: "Michael B. Jordan once again proves himself to be the real deal, effectively making Adonis' inner struggle feel true. We sense how deep and real the stakes are as he looks for a way to establish himself outside of his famous father's shadow, even though he's choosing the same career path. Jordan has some very touching scenes with Stallone, who takes on a mentoring role here. What's so captivating about his performance is that you can see a touch of identification in it. Rocky knows that Adonis is so good that his skills could be life-changing. Similarly, Stallone knows that playing Adonis could open a lot of career doors for Jordan, just as it did for him. There are moments where the line between reality and fiction blur, creating a character dynamic that is surprisingly affecting. \n Creed is also just a good old-fashioned underdog story, one that earns your rooting interest early on, then continues building it. Yes, it follows a fairly traditional formula, but so what? With strong performances, a worthy theme about learning to like yourself, and some appropriate – but not corny – references to key moments from the Rocky series, Creed works both as part of a larger franchise and on its own massively entertaining terms.",
+    movie: Movie.find_by(title: "Creed"),
+    user: critics.sample},
+  {title: "Cue The Sad Music",
+    content: "5 million years ago a rogue meteor hit the earth, changing the world drastically. One of the big changes was the extinction of the dinosaurs. But what if that meteor had missed? \n Meet the Apatosaurus family. Momma and Poppa welcome the arrival of three eggs and their contents. Soon, the family is complete with Libby, Buck and Arlo. These particular dinosaurs are farmers, and they’re bodies allow them the opportunity to act as both the plow and the sprinkler system. Brainy Libby helps out, as does brawny Buck. Sadly, tiny Arlo can only feed the chickens (or at least the prehistoric version of chickens) and help fill the silo with corn so the family can survive the winter. Things go well until, like most films, tragedy strikes and Arlo finds himself on his own. Cue the sad music..",
+    movie: Movie.find_by(title: "The Good Dinosaur"),
+    user: critics.sample},
+  {title: "Visually Pleasing But Your Kids Will Cry",
+    content: "From the PIXAR division of Disney, “The Good Dinosaur” is a visual treat for the eyes. From the ice covered mountains to the rushing river waters it is amazing the advances that have been made in computer generated animation. Like most Disney films, the hero soon finds himself in trouble, where he is rescued by a young boy that Arlo names “Spot.” The best way to describe Spot is to ask if you remember the Feral Kid from “The Road Warrior.” If so, you now have an image of what I’m talking about. \n The film follows Arlo and Spot as they make their way back to Three Claw Mountain. Along the way they meet some colorful creatures, including a trio of T-rex’s led by Sam Elliott. The many characters are vividly rendered and all are memorable. And frightening. I have no idea how this film received a PG rating. There is death in and around the story, including a scene where a cute, saucer-eyed animal is suddenly gobbled down and then torn to shreds by a pair of dueling pterodactyls! If you’re taking children under the age of 7 prepare to dry their tears.",
+    movie: Movie.find_by(title: "The Good Dinosaur"),
+    user: critics.sample},
+  {title: "Visually Pleasing But Your Kids Will Cry",
+    content: "From the PIXAR division of Disney, “The Good Dinosaur” is a visual treat for the eyes. From the ice covered mountains to the rushing river waters it is amazing the advances that have been made in computer generated animation. Like most Disney films, the hero soon finds himself in trouble, where he is rescued by a young boy that Arlo names “Spot.” The best way to describe Spot is to ask if you remember the Feral Kid from “The Road Warrior.” If so, you now have an image of what I’m talking about. \n The film follows Arlo and Spot as they make their way back to Three Claw Mountain. Along the way they meet some colorful creatures, including a trio of T-rex’s led by Sam Elliott. The many characters are vividly rendered and all are memorable. And frightening. I have no idea how this film received a PG rating. There is death in and around the story, including a scene where a cute, saucer-eyed animal is suddenly gobbled down and then torn to shreds by a pair of dueling pterodactyls! If you’re taking children under the age of 7 prepare to dry their tears.",
+    movie: Movie.find_by(title: "The Good Dinosaur"),
+    user: critics.sample},
+  {title: "The Peanuts, But Not As Good",
+    content: "Peanuts would never have been any good without the grief. When Charles Schulz's daily comic strip debuted in 1950, it offered cute jokes about neighborhood kids and their dog, but as Schulz began to find his characters in the late '50s and early '60s—the depressed Charlie Brown, the hardened Lucy, the insecure Linus, the monomaniacal Snoopy—Peanuts developed an emotional depth that made it hilariously funny and revolutionized the art form. Last week The Peanuts Movie brought Schulz's cast of characters back to the big screen for the first time in 35 years, adding the modern technology of 3-D animation to give the characters physical depth. But emotional depth is another matter—this is a G-rated movie, and in America we try to protect children from not only sex and violence but also unhappiness.",
+    movie: Movie.find_by(title: "The Peanuts Movie"),
+    user: critics.sample},
+  {title: "Nostalgic And Good",
+    content: "For those of us from a certain time, the “Peanuts” comic strip is a definite part of our growing up. I collected the paperback books, read the daily comic strips and can proudly say that I am so old that I can remember watching “A Charlie Brown Christmas” when it debuted! Five decades of memories are treated with the respect they deserve in the new film “The Peanuts Movie.” \n As the film begins, the gang are celebrating a new snow fall, which signals a snow day. We gradually meet all of the familiar characters (Linus, Lucy, Sally and, of course, Snoopy). And we meet a new one when a moving truck shows up. The family consists of a mother and father and a pretty little red-headed girl. Cue the arrows to the heart – Charlie Brown is in love. \n A production from the same group that made the “Ice Age” films, I have to give great credit to the filmmakers for keeping the look of the characters the same. Even though the animation is done via CGI, the way the characters move and interact is similar to the original hand-drawn films and television specials from the past. Each character is given their familiar traits (Lucy’s vainness, Schroeder’s piano playing, Linus and his blanket) and situations. Each character is given their due, almost as if the film was a true ensemble piece. The story is straight-forward but will be entertaining for both young and old viewers.",
+    movie: Movie.find_by(title: "The Peanuts Movie"),
+    user: critics.sample},
+  {title: "Sleek and Serious.",
+    content: "Ever since Daniel Craig took over the role of 007, the Bond franchise has been moving toward a more grounded, John La Carre-style spy thriller and away from the cartoony gadgets of the Roger Moore era. Villains don’t have grand schemes like robbing Fort Knox but rather something more nebulous and sinister like controlling global technology. But some things – like Bond’s banter with evil masterminds – never quite goes away. \n 'SPECTRE' is a sleek, stylish entry in the modern Bond films. There’s less action, more exposition but also an ambitious overarching story arc. It’s a solid, serious spy film that still has a playful glint in its eye.",
+    movie: Movie.find_by(title: "Spectre"),
+    user: critics.sample},
+
+  {title: "The Haunting of James Bond",
+    content: "The decision, starting in Quantum of Solace, to make Bond a rogue agent operating outside the umbrella of Queen and Country—and then Javier Bardem’s Silva an ex-MI6 operative with an axe to grind—was to eschew those reliable standbys, good and evil (white and black, like a tuxedo) and instead cloak the old warhorse in those fashionable shades of grey that all the kids (and comic-book-movie-worshipping adultcritics) like to rave about these days. If a spectre was haunting the proceedings, it was the ghost of Christopher Nolan, whose fanatical need to connect and reflect his good guys and bad guys off of one another typically borders on the pathological—and requires a heaping ton of convoluted backstory to boot. This all gets even worse in Spectre, where Waltz’s You-Know-Who explains to a stricken-looking Daniel Craig: “It was me, James, the author of all your pain..",
+    movie: Movie.find_by(title: "Spectre"),
+    user: critics.sample}]
+
+
+critic_reviews = 70.times.map do
   Review.create!( :title => Faker::Lorem.sentence,
                   :content => Faker::Lorem.paragraph(word_count=225, true),
                   movie: Movie.all.sample,
