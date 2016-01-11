@@ -1,11 +1,11 @@
 <div id="gallery">
   <div id="slider">
     <figure>
-      <img src="/assets/The-Big-Short-600x936.jpg">
-      <img src="/assets/In-the-Heart-of-the-Sea-Poster.jpg">
-      <img src="/assets/The-Lady-in-the-Van-new-poster.jpg">
-      <img src="/assets/the-good-dinosaur.jpg">
-      <img src="/assets/legend-poster-guardian.jpg">
+      <img src="asset_path('The-Big-Short-600x936.jpg')">
+      <img src="asset_path('In-the-Heart-of-the-Sea-Poster.jpg')">
+      <img src="asset_path('The-Lady-in-the-Van-new-poster.jpg')">
+      <img src="asset_path('the-good-dinosaur.jpg')">
+      <img src="asset_path('legend-poster-guardian.jpg')">
     </figure>
   </div>
 </div>
@@ -20,7 +20,7 @@
   <% @movies.each do |movie| %>
     <div id="index_movie">
       <li><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;position:relative;><p style=position:relative;line-height:85px;text-align:center;> <%= movie.average_ratingz(true) %></p></div></li>
-
+                                  <!-- asset_path('big-star.png') -->
      <li><%= link_to "#{movie.title}", movie_path(movie) %> <span id="release_date"><%= movie.release_date.strftime("(%Y)") %></span></li>
    </div>
   <% end %>
