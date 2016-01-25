@@ -1,0 +1,206 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0 auto;
+}
+
+body a {
+  text-decoration: none;
+}
+
+.container a {
+  color: #3B5555;
+}
+
+.container a:hover {
+  color: #909C9C;
+}
+
+h1 {
+  font-family: papyrus;
+}
+
+li {
+  list-style: none;
+}
+
+.nav {
+  background-color: #516969;
+  height: 6em;
+}
+
+.nav ul {
+  float: left;
+  margin: 0;
+}
+
+.nav li {
+  float: left;
+  padding: 1.8em;
+}
+
+.nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.nav a:hover {
+  color: #c7d0d5;
+}
+
+.search {
+  display: inline;
+  float: right;
+  padding: 1.8em;
+}
+
+.container {
+  clear: both;
+  font-size: 1.2em;
+  background-color: #F6F6F6;
+  padding: 1em 4em 1em 4em;
+}
+
+#home-headers {
+  text-align: center;
+}
+
+
+#index_movie_grid {
+  margin-left: 8em;
+  position: relative;
+  display: inline-grid;
+  width: 85%;
+}
+
+#index_movie {
+  float: left;
+  width: 7em;
+  padding: 2em;
+}
+
+#release_date {
+  font-size: .7em;
+  font-weight: bolder;
+}
+
+ul {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-start: 0;
+}
+
+.btn {
+  padding: .2em;
+}
+
+#imdbc a {
+  font-weight: bolder;
+  color: black;
+}
+
+#imdbc a:hover {
+  font-weight: bolder;
+  color: #c7d0d5;
+}
+
+.field {
+  padding: .5em;
+}
+
+/*HOMEPAGE IMAGE SLIDER*/
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+div#slider {
+  overflow: hidden;
+  height: 14em;
+}
+
+div#slider figure img {
+  position: relative;
+  width: 20%;
+  float: left;
+}
+
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 50s slidy infinite;
+}
+
+div#gallery {
+  margin: 0 auto;
+  width: 20em;
+}
+
+/*MOVIE SHOW PAGE*/
+#movie-show-info li#video {
+  float: right;
+  padding: 1em;
+  position: relative;
+}
+
+#movie-show-info li#critic-star {
+  float: left;
+  padding: 1em;
+  position: relative;
+  right: 3em;
+  top: 7.5em;
+}
+
+#user-reviews li#user-star {
+  float: left;
+  padding: 1em;
+  position: relative;
+  right: 3.2em;
+}
+
+#movie-reviews h3#critic-reviews {
+  position: relative;
+  left: 2em;
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+#movie-reviews h3#user-reviews {
+  position: relative;
+  font-weight: bolder;
+  font-size: 1.5em;
+  right: 2.5em;
+  top: .5em;
+}
+
+#movie-reviews {
+  margin-top: 10em;
+}
+
+#user-reviews {
+  position: relative;
+  padding: 1em;
+}
+
+/*FORMS*/
+form.new_review {
+  line-height: 1.5em;
+}
+
+form.new_review input[type="submit"] {
+  margin-top: 1em;
+  padding: .3em;
+}
