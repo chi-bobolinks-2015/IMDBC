@@ -12,6 +12,7 @@
     <% if @movie.critic_reviews.length > 0 %>
 
     <li id="critic-star"><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(true) %></p></div></li>
+                                                  <!-- "<%=asset_path('big-star.png')%>" -->
 </div>
 
     <% if user_signed_in? %>
@@ -30,6 +31,7 @@
       <div id="user-reviews">
       <% if @movie.user_reviews.length > 0 %>
          <li id="user-star"><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;><p style=position:relative;line-height:85px;text-align:center;> <%= @movie.average_ratingz(false) %></p></div></li>
+                                                    <!-- "<%=asset_path('big-star.png')%>" -->
         <li><h3 id="user-reviews">User Reviews: </h3><% @movie.user_reviews.each do |review| %></li>
           <ul>
             <li><h4><%= link_to "#{review.title}", movie_review_path(@movie, review) %></h4></li>
