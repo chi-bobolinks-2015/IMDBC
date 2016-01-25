@@ -20,7 +20,7 @@
   <% @movies.each do |movie| %>
     <div id="index_movie">
       <li><div style=background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;position:relative;><p style=position:relative;line-height:85px;text-align:center;> <%= movie.average_ratingz(true) %></p></div></li>
-                                  <!-- asset_path('big-star.png') -->
+                                  <!-- "<%=asset_path('')%>" -->
      <li><%= link_to "#{movie.title}", movie_path(movie) %> <span id="release_date"><%= movie.release_date.strftime("(%Y)") %></span></li>
    </div>
   <% end %>

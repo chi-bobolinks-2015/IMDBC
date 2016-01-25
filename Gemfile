@@ -25,10 +25,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
-gem 'rails_admin'  
+gem 'rails_admin'
 gem 'ratyrate'
 gem 'simple_captcha2', require: 'simple_captcha'
 gem 'rails_12factor', group: :production
+gem 'faker', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
