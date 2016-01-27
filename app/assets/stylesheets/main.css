@@ -9,6 +9,7 @@ body a {
 
 .container a {
   color: #3B5555;
+  line-height: 1.5em;
 }
 
 .container a:hover {
